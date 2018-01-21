@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="本插件不需要安装到系统,只需要放到磁盘存储中,然后使用使用机器人主程序选择本文件进行安装!,
-        你也可以手动移动到/data/data/cn.qssq666/robot/app_plugin文件夹中去.如果是手动安装需要进入插件界面选择刷新插件方可生效"
+        你也可以手动移动到/data/data/cn.qssq666/robot/app_plugin文件夹中去也可以点击下面的按钮进行主动安装.除了从机器人软件自身选择安装外，其他则进入机器人插件管理界面选择刷新插件方可生效,本demo只是演示，逻辑是收到私聊消息为插件拦截插件就进行回复,否则不拦截"
 
         />
 

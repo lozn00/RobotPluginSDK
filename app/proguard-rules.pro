@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# 在开发的时候我们可以将所有的实体类放在一个包内，这样我们写一次混淆就行了。
+-keep public class cn.qssq666.robot.bean.**{*;}
+-keep public class ccn.qssq666.robot.plugin.sdk.interfaces.**{*;}
+
+-keep cn.qssq666.robot.plugin.sdk.control.PluginMainImpl {
+    public <fields>;
+    public <methods>;
+}

@@ -8,6 +8,7 @@ import cn.qssq666.plugin.demo.BuildConfig;
 import cn.qssq666.robot.bean.MsgItem;
 import cn.qssq666.robot.plugin.sdk.interfaces.PluginCtronolInterface;
 import cn.qssq666.robot.plugin.sdk.interfaces.PluginInterface;
+import cn.qssq666.robot.plugin.sdk.interfaces.RobotConfigInterface;
 
 
 /**
@@ -23,6 +24,7 @@ public class PluginMainImpl implements PluginInterface {
     private boolean mEnable;
     private SharedPreferences defaultSharedPreferences;
     private PluginCtronolInterface apiInterface;
+    private RobotConfigInterface robotConfigInterface;
 
     @Override
     public String getAuthorName() {
@@ -97,6 +99,14 @@ public class PluginMainImpl implements PluginInterface {
                 apiInterface.sendQQMsg(item);
                 return true;
             }
+        } else {
+            if (this.robotConfigInterface.isEnableGroupMsg()) {
+                if (item.getMessage().contains("拦截插件")) {
+                    item.setMessage("本消息已经被" + BuildConfig.APPLICATION_ID + "包插件拦截");
+                    apiInterface.sendQQMsg(item);
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -104,6 +114,11 @@ public class PluginMainImpl implements PluginInterface {
     @Override
     public void onDestory() {
 
+    }
+
+    @Override
+    public void onReceiveRobotConfig(RobotConfigInterface robotConfigInterface) {
+        this.robotConfigInterface = robotConfigInterface;
     }
 
 
