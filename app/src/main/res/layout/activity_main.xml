@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="cn.qssq666.plugin.demo.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本插件不需要安装到系统,只需要放到磁盘存储中,然后使用使用机器人主程序选择本文件进行安装!,
+        你也可以手动移动到/data/data/cn.qssq666/robot/app_plugin文件夹中去.如果是手动安装需要进入插件界面选择刷新插件方可生效"
+
+        />
+
+    <Button
+        android:id="@+id/btn_install"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="主动安装" />
+
+</LinearLayout>
